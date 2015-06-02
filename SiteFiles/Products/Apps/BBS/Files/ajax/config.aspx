@@ -1,0 +1,1 @@
+﻿<%@ Page Language="c#" Inherits="SiteServer.BBS.Pages.Ajax.Config" Trace="False" %>

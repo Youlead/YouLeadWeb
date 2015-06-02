@@ -1,0 +1,8 @@
+.activeTable { border-collapse:collapse; }
+.activeTable thead th { font:bold 13px/18px georgia; text-align:left; background:#fff4c6; color:#333; padding:8px 16px 8px 8px; border-right:1px solid #fff; border-bottom:1px solid #fff; }
+.activeTable thead th.null { background:#fff; }
+.activeTable tbody th { font:bold 12px/15px georgia; text-align:left; background:#fff9e1; color:#333; padding:8px; border-bottom:1px solid #f3f0e4; border-right:1px solid #fff; }
+.activeTable tbody td { font:normal 12px/15px georgia; color:#333; padding:8px; border-right:1px solid #f3f0e4; border-bottom:1px solid #f3f0e4; }
+.activeTable tbody td.on { background:#f3f0e4; }
+.activeTable thead th.on { background:#ffe068; }
+.activeTable tbody th.on { background:#ffe068; }

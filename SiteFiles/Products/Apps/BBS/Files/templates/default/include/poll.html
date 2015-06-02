@@ -1,0 +1,90 @@
+<bbs:run if="base.pollInfo != null">
+<style type="text/css" media="screen">
+fieldset { border: 0px; margin: 0px; outline-style: none; outline-color: invert; padding: 0px; }
+.onvote_info { line-height: 18px; margin: 15px 0px; }
+.onvote_info input { border: medium none; }
+.onvote_info .oi_input { text-align: center; }
+.onvote_info th { padding-bottom: 3px; padding-left: 0px; padding-right: 0px; padding-top: 3px; font-style: normal; font-weight: normal; }
+.onvote_info td { padding-bottom: 3px; padding-left: 0px; padding-right: 0px; padding-top: 3px; }
+.onvote_info th.oi_text { text-align: right; padding-bottom: 3px; padding-left: 8px; padding-right: 8px; word-wrap: break-word; height: 26px; padding-top: 3px; }
+.oi_numline1, .oi_numline2, .oi_numline3, .oi_numline4, .oi_numline5 { background: url({bbs.bbsUrl}/images/poll/public_bg_01.png) no-repeat; float: left; height: 12px; overflow: hidden; }
+.oi_numline1 span, .oi_numline2 span, .oi_numline3 span, .oi_numline4 span, .oi_numline5 span { background: url({bbs.bbsUrl}/images/poll/public_bg_01.png) no-repeat; float: left; height: 12px; overflow: hidden; }
+.oi_numline { width: 180px; background: url({bbs.bbsUrl}/images/poll/public_bg_03.png) no-repeat left center; height: 12px; overflow: hidden; }
+.oi_numline1 { background-position: right -24px; }
+.oi_numline1 span { width: 100%; background-position: left -12px; }
+.oi_numline2 { background-position: right -48px; }
+.oi_numline2 span { width: 100%; background-position: left -36px; }
+.oi_numline3 { background-position: right -72px; }
+.oi_numline3 span { width: 100%; background-position: left -60px; }
+.oi_numline4 { background-position: right -96px; }
+.oi_numline4 span { width: 100%; background-position: left -84px; }
+.oi_numline5 { background-position: right -120px; }
+.oi_numline5 span { width: 100%; background-position: left -108px; }
+.onvote_info td.oi_num { padding-left: 7px; width: 100px; padding-right: 7px; }
+.oi_num span { padding-bottom: 0px; padding-left: 2px; padding-right: 2px; color: #9b9b9b; padding-top: 0px; }
+.oi_right { width: 16px; display: inline-block; background: url({bbs.bbsUrl}/images/poll/vote_ico.png) no-repeat 2px -51px; height: 12px; }
+.onvote_btn { text-align: right; padding-bottom: 10px; padding-left: 0px; padding-right: 226px; font-size: 14px; padding-top: 0px; }
+.onvote_btn01 { border: medium none; text-align: center; padding-bottom: 0px; line-height: 28px; padding-left: 0px; width: 71px; padding-right: 0px; background: url({bbs.bbsUrl}/images/poll/public_btn_01.png) no-repeat; height: 28px; font-size: 12px; overflow: hidden; cursor: pointer; font-weight: 700; padding-top: 0px; }
+.onvote_btn01 { background-position: 0px 0px; color: #fff; }
+.vote_main { margin:10px 0; padding: 0; width: 600px; font-family: Arial, Helvetica, sans-serif; color: #000; font-size: 12px; }
+.onvote_infocontsp { padding: 10px; background-color:white; }
+.onvote_infocontsp .onvote_info tr { cursor: pointer; }
+.onvote_infocontsp .onvote_info .oi_input { width: 24px; }
+.onvote_infocontsp .oi_text { text-align: right; padding-right: 12px; color: #414141; }
+.onvote_infocontsp td.oi_num { padding-bottom: 3px; padding-left: 12px; width: 114px; padding-right: 12px; padding-top: 3px; }
+.onvote_infocontsp td.oi_input { padding-bottom: 0px; padding-left: 0px; padding-right: 30px; padding-top: 0px; }
+.onvote_infocontsp .onvote_btn { padding-bottom: 10px; padding-left: 0px; padding-right: 28px; padding-top: 0px; }
+.onvote_infocontsp .onvote_btn .onvote_btnc { border: medium none; vertical-align: middle; }
+.onvote_infocontsp .onvote_btn label { margin: 0px 10px 0px 5px; font-size: 12px; cursor: pointer; }
+.onvote_infocontsp .onvote_btn01 { font-size: 14px; }
+.onvote_btn input { border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px; }
+.onvote_btn02 { border-bottom: medium none; text-align: center; border-left: medium none; padding-bottom: 0px; line-height: 28px; padding-left: 0px; width: 71px; padding-right: 0px; background: url({bbs.bbsUrl}/images/poll/public_btn_01.png) no-repeat; height: 28px; font-size: 12px; overflow: hidden; border-top: medium none; cursor: pointer; font-weight: 700; border-right: medium none; padding-top: 0px; }
+.onvote_btn02 { background-position: 0px -56px; color: #959595; }
+.onvote_info tr { position: relative; }
+.onvote_infotip { text-align: center; line-height: 30px; margin: 15px auto 0px; padding-left: 8px; width: 166px; background: url({bbs.bbsUrl}/images/poll/public_bg_04.png) no-repeat left center; height: 30px; color: #575757; }
+</style>
+<div class="vote_main">
+  <div class="onvote_infocontsp">
+    <bbs:run if="!base.isPolled && !base.pollInfo.IsOverTime && base.pollInfo.IsVoteFirst">
+      <div id="poll_tip" class="onvote_infotip"> 投票后才能查看结果 </div>
+    </bbs:run>
+    <form onsubmit="onPollSubmit(this);return false;" action="{bbs.formUrl}poll" method="post">
+      <input id="threadID" name="threadID" type="hidden" value="<%=base.threadID%>" />
+      <fieldset>
+        <table id="optwrap" class="onvote_info" cellSpacing="0" cellPadding="0" width="100%">
+          <tbody>
+          <asp:Literal ID="ltlPollTrs" runat="server"></asp:Literal>
+          </tbody>
+        </table>
+        <bbs:run if="!UserUtils.IsAnonymous">
+        <bbs:run if="base.isPolled">
+          <bbs:successTemplate>
+            <div class="onvote_btn"> <a href="javascript:;">
+              <input style="CURSOR: default" class="onvote_btn02" type="button" value="已投票" />
+              </a> </div>
+          </bbs:successTemplate>
+          <bbs:failureTemplate>
+            <bbs:run if="base.pollInfo.IsOverTime">
+              <bbs:successTemplate>
+                <div class="onvote_btn"> <a href="javascript:;">
+                  <input style="CURSOR: default" class="onvote_btn02" type="button" value="已结束" />
+                  </a> </div>
+              </bbs:successTemplate>
+              <bbs:failureTemplate>
+                <p class="oi_text" style="text-align:center"><span>有效期：<%=base.pollInfo.AddDate.ToString("yyyy年MM月dd日 HH:mm")%> -- <%=base.pollInfo.Deadline.ToString("yyyy年MM月dd日 HH:mm")%></span></p>
+                <div class="onvote_btn"> <span>
+                  <input id="anonymous" class="onvote_btnc" type="checkbox" name="anonymous" value="on" />
+                  <label for="anonymous">匿名</label>
+                  </span>
+                  <input class="onvote_btn01" type="submit" value="投票" />
+                </div>
+              </bbs:failureTemplate>
+            </bbs:run>
+          </bbs:failureTemplate>
+        </bbs:run>
+        </bbs:run>
+      </fieldset>
+    </form>
+  </div>
+</div>
+</bbs:run>

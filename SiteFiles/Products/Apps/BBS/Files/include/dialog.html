@@ -1,0 +1,37 @@
+<div id="dialog_window" style="Z-INDEX: 300009; display: block; display:none; width: 400px; height: 288px; TOP: 79px; LEFT: 400px" class="window window_current">
+  <div style="Z-INDEX: 26; height: 268px" id="dialog_outer" class="window_outer">
+    <div style="Z-INDEX: 300009" id="window_inner" class="window_inner">
+      <div class="window_bg_container">
+        <div class="window_bg window_center"> </div>
+        <div class="window_bg window_t"> </div>
+        <div class="window_bg window_rt"> </div>
+        <div class="window_bg window_r"> </div>
+        <div class="window_bg window_rb"> </div>
+        <div class="window_bg window_b"> </div>
+        <div class="window_bg window_lb"> </div>
+        <div class="window_bg window_l"> </div>
+        <div class="window_bg window_lt"> </div>
+      </div>
+      <div class="window_content">
+        <div id="window_titleBar_5" class="window_titleBar" style="cursor:move;" onmousedown = "moveDialog(event);">
+          <div id="window_titleButtonBar_5" class="window_titleButtonBar"> <a style="display: block" id="dialog_close" class="ui_button window_action_button window_close" title="关闭" href="javascript:void(0);" hidefocus=""></a> </div>
+          <div id="dialog_title" class="window_title titleText"></div>
+        </div>
+        <div style="width: 380px; height: 240px" id="dialog_body" class="window_bodyArea">
+          <div style="height: 99%" id="login_window_content_area" class="content_area">
+            <div id="dialog_tips_container" style="PADDING-LEFT: 2px; width: 100%; display: block; BACKGROUND-COLOR:#ffffe1;"> <span id="dialog_tips" style="float: left"></span><span style="display: inline; float: right; CURSOR: pointer; MARGIN-RIGHT: 5px" id="close_login_tip" onclick="this.parentNode.style.display='none';">ｘ</span> </div>
+            <div class="login_window_wrap">
+              <iframe hideFocus id="dialog_iframe" src="" frameBorder="no" allowTransparency scrolling="no"></iframe>
+            </div>
+          </div>
+        </div>
+        <div style="display: none" id="dialog_control" class="window_controlArea">
+        <a style="display: block" id="dialog_cancel" class="ui_button window_button window_cancel" title="" href="javascript:void(0);" onclick="hideDialog();" hidefocus="">取消</a>
+        <a style="display: block" id="dialog_ok" class="ui_button window_button window_ok" title="" href="javascript:void(0);" onclick="hideDialog();" hidefocus="">确定</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <IFRAME class="fullscreen_bg_iframe" height="100%" width="100%"></IFRAME>
+</div>
+<asp:Literal ID="ltlScripts" runat="server"></asp:Literal>

@@ -1,0 +1,124 @@
+<script type="text/javascript" src="js/swfUpload/swfupload.js"></script>
+<script type="text/javascript" src="js/swfUpload/handlers.js"></script>
+<script type="text/javascript">
+function uploadSuccess(file, response) {
+	if (response) {
+	 response = eval("(" + response + ")");
+	 
+	 if (response.success == 'true') {
+		addToList(response.id, response.fileName, response.tips, response.description, response.price);
+	 } else {
+		 $('#img_upload_txt').text(response.message);
+	 }
+	}
+}
+
+function addToList(id, fileName, tips, description, price){
+	var count = parseInt($('#fileCount').val()) + 1;
+	var $el = $('<tr id="fileTr_' + count + '">' + $('#fileTr_0').html().replace(/_0/g, '_' + count) + '</tr>');
+	$el.insertAfter($('#fileTr_' + (count - 1)));
+	$('#fileID_' + count).val(id);
+	$('#fileLink_' + count).html(fileName);
+	$('#fileLink_' + count).attr('title', tips);
+	$('#fileLink_' + count).click(function(){
+		KE.insertHtml('content', "[attachment id=" + id + "]");
+	});
+	$('#fileDescription_' + count).val(description);
+	$('#filePrice_' + count).val(price);
+	$('#fileCount').val(count);
+}
+
+function removeFromList(trID){
+	$(trID).remove();
+	var count = parseInt($('#fileCount').val());
+	$('#fileCount').val(count - 1);
+}
+
+var swfu;
+$(document).ready(function(){
+	$("select").sSelect();
+	$("#filetabs ul").idTabs();
+	
+	if (navigator.userAgent.indexOf("Firefox")== -1){
+		swfu = new SWFUpload({
+		// Backend Settings
+		upload_url: "{bbs.bbsUrl}/ajax/upload.aspx?publishmentSystemID=" + publishmentSystemID,
+	
+		// File Upload Settings
+		file_size_limit : "2 MB",
+		file_types : "<%=GetUploadTypes(false)%>",
+		file_types_description : "附件",
+		file_upload_limit : 0,    // Zero means unlimited
+	
+		// Event Handler Settings - these functions as defined in Handlers.js
+		//  The handlers are not part of SWFUpload but are part of my website and control how
+		//  my website reacts to the SWFUpload events.
+		swfupload_preload_handler : preLoad,
+		swfupload_load_failed_handler : loadFailed,
+		file_queue_error_handler : fileQueueError,
+		file_dialog_complete_handler : fileDialogComplete,
+		upload_error_handler : uploadError,
+		upload_success_handler : uploadSuccess,
+		upload_complete_handler : uploadComplete,
+	
+		// Button settings
+		button_image_url : "js/swfUpload/button.png",
+		button_placeholder_id : "swfUploadPlaceholder",
+		button_width: 114,
+		button_height: 22,
+		button_text : '多个文件上传',
+		button_text_top_padding: 1,
+		button_text_left_padding: 5,
+	
+		// Flash Settings
+		flash_url : "js/swfUpload/swfupload.swf",	// Relative to this file
+		flash9_url : "js/swfUpload/swfupload_FP9.swf",	// Relative to this file
+	
+		// Debug Settings
+		debug: false
+		});	
+	}
+	
+	new AjaxUpload('uploadFile', {
+	 action: "ajax/upload.aspx?publishmentSystemID" + publishmentSystemID,
+	 name: "Filedata",
+	 data: {},
+	 onSubmit: function(file, ext) {
+		 var reg = /^(<%=GetUploadTypes(true)%>)$/i;
+		 if (ext && reg.test(ext)) {
+			 $('#img_upload_txt').text('上传中... ');
+		 } else {
+			 $('#img_upload_txt').text('系统不允许上传指定的格式');
+			 return false;
+		 }
+	 },
+	 onComplete: function(file, response) {
+		$('#img_upload_txt').text(' ');
+		 if (response) {
+			 response = eval("(" + response + ")");
+			 if (response.success == 'true') {
+				 addToList(response.id, response.fileName, response.tips, response.description, response.price);
+			 } else {
+				 $('#img_upload_txt').text(response.message);
+			 }
+		 }
+	 }
+	});	
+	<%=GetAddToListScript()%>
+});
+</script>
+<style>
+.tab a {
+	margin-top:-2px;
+}
+.upload {
+	background-image:url(js/swfUpload/button.png);
+	width:104px;
+	height:18px;
+	text-align:left;
+	padding:2px 5px;
+	cursor:default;
+	text-decoration:none;
+	display:block;
+}
+</style>

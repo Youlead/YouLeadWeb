@@ -1,0 +1,27 @@
+<%if (base.pagerInfo != null){%>
+<div class="page_out">
+  <div class="pagination">
+    <div class="page_right">
+      <%if (base.pagerInfo.Page > 1){%>
+      <a href="<%=base.pagerInfo.GetUrl(base.pagerInfo.Page - 1)%>"><span>上一页</span></a>
+      <%}%>
+      <%if (base.pagerInfo.Start > 1){%>
+      <a href="<%=base.pagerInfo.GetUrl(1)%>">1...</a>
+      <%}%>
+      <%for(int i = base.pagerInfo.Start; i <= base.pagerInfo.End; i++){ %>
+      <%if (i == base.pagerInfo.Page){%>
+      <span class="page-cur"><%=i%></span>
+      <%}else{%>
+      <a href="<%=base.pagerInfo.GetUrl(i)%>"><%=i%></a>
+      <%}%>
+      <%}%>
+      <%if (base.pagerInfo.End < base.pagerInfo.PageCount){%>
+      <a href="<%=base.pagerInfo.GetUrl(base.pagerInfo.PageCount)%>">...<%=base.pagerInfo.PageCount%></a>
+      <%}%>
+      <%if (base.pagerInfo.Page < base.pagerInfo.End){%>
+      <a class="page-next" href="<%=base.pagerInfo.GetUrl(base.pagerInfo.Page + 1)%>"><span>下一页</span></a>
+      <%}%>
+    </div>
+  </div>
+</div>
+<%}%>

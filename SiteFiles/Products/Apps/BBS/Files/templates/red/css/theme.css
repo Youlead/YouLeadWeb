@@ -1,0 +1,29 @@
+@charset "utf-8";
+/*新版CSS*/
+body { background: url(../images/nbs_bg1.jpg) repeat; }
+#header{ background: url(../images/nbs_bg2.jpg) repeat-x left bottom; height: 142px; }
+.header_logo { padding: 16px 0px 0px 9px; height: 58px; }
+.nbs_fl { line-height: 33px; float: left; padding-right: 6px; }
+.logindiv .login3 a{color:#D50D0B}
+.nbs_org{color:#CA4312;}
+.search{width:390px; color:#fff;}
+.sea_input{ background: #FFF; height: 20px; width: 230px; border: 1px solid #8C382D; font-size: 12px; line-height: 20px; margin-top: 7px; padding-top: 0px; }
+.nbs_lig { position: relative; top: -4px; }
+.sear_btn { float: left; height: 23px; width: 60px; background: url(../images/nbs_btn.jpg) no-repeat; }
+.navigation li{ background: url(../images/nbs_lbg2.jpg) no-repeat; line-height: 35px; height: 35px; width: 86px; }
+.navigation ul .nbs_hover { background: url(../images/nbs_lbg1.jpg) no-repeat; width: 88px; }
+.nbs_hover a, .nbs_hover a:hover { color: #FFF; }
+.nav_fu li{line-height:30px; font-size:12px;}
+.search{position:relative; top:-2px;}
+.adv_area{ background: #FFF4F4; border: 1px solid #FFCCCC; padding-top: 20px; padding-bottom: 20px; margin-top: 15px; }
+.nbs_img { width: 100px; padding-left:0 }
+.fl_g .nbs_dl { width: 180px; padding:0 }
+.xi2,.share_right a,.annouce_01font a{color:#CA4312}
+.share_tit{ line-height: 30px; background: url(../images/nbs_bg3.jpg) repeat-x; height: 30px; }
+.share_tit h2{line-height:30px;}
+.share_tit h2 a{ color: #CA4312;}
+.share_area{ border: 1px solid #FFCCCC; background: #FFF; }
+.sha_bot_line {border-bottom: medium none;}
+.link_list,.zxyh {background-color:#fff; overflow:hidden;}
+.adv_area li,.link_list li{ display: block; white-space: nowrap; }
+.nbs_bomw{width:958px;}

@@ -1,0 +1,79 @@
+@charset "utf-8";
+a {text-decoration: none}
+.ui_button { text-align: center; line-height: 23px; width: 66px; float: right; height: 23px; color: #333; margin-left: 10px; cursor: pointer; }
+.content_area { z-index: 0; border-bottom: #a1b4b0 1px solid; position: absolute; border-left: #a1b4b0 1px solid; bottom: 0px; background: white; overflow: hidden; border-top: #a1b4b0 1px solid; top: 0px; right: 0px; border-right: #a1b4b0 1px solid; left: 0px; _height: 100%; }
+.content_area IFRAME { position: absolute; width: 100%; height: 100%; overflow: auto; top: 0px; left: 0px; }
+.login_window_wrap { text-align: center; width: 100%; height:100%; background: #fff; }
+.login_window_wrap IFRAME { position: relative; width: 100%; background: #fff; height: 100%; overflow: hidden; }
+.window { position: absolute; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; display: none; overflow: hidden; padding-top: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-touch-callout: none; }
+.window_outer { position: absolute; padding-bottom: 10px; padding-left: 10px; bottom: 0px; padding-right: 10px; top: 0px; right: 0px; padding-top: 10px; left: 0px; }
+.window_inner { position: relative; width: 100%; height: 100%; }
+.window_titleBar { height: 39px; overflow: hidden; cursor: default; }
+.window_title { line-height: 20px; overflow: hidden; }
+.window_content { margin: 0px; height: 100%; overflow: hidden; }
+.window_bodyArea { position: absolute; width: 100%; bottom: 0px; background: none transparent scroll repeat 0% 0%; overflow: hidden; top: 30px; }
+A.window_close { width: 16px; display: none; float: right; height: 16px; margin-left: 4px; cursor: pointer; }
+.window_controlArea { position: absolute; padding-bottom: 0px; padding-left: 0px; width: 100%; bottom: 0px; padding-right: 0px; display: none; height: 23px; padding-top: 3px; }
+.window_bg_container { z-index: -1; position: absolute; padding-bottom: 0px; border-right-width: 0px; margin: 0px; padding-left: 0px; width: 100%; padding-right: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 100%; border-left-width: 0px; top: 0px; padding-top: 0px; left: 0px; }
+.window_bg { position: absolute; padding-bottom: 0px; border-right-width: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: block; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px; }
+.window_center { width: 100%; height: 100%; }
+.window_t { width: 100%; height: 10px; overflow: hidden; top: -10px; left: 0px; }
+.window_current .window_t { width: 100%; height: 10px; overflow: hidden; top: -10px; left: 0px; }
+.window_rt { width: 10px; height: 10px; overflow: hidden; top: -10px; right: -10px; }
+.window_current .window_rt { width: 10px; height: 10px; overflow: hidden; top: -10px; right: -10px; }
+.window_r { width: 10px; height: 100%; overflow: hidden; right: -10px; }
+.window_current .window_r { width: 10px; height: 100%; overflow: hidden; right: -10px; }
+.window_rb { width: 10px; bottom: -10px; height: 10px; overflow: hidden; right: -10px; }
+.window_current .window_rb { width: 10px; bottom: -10px; height: 10px; overflow: hidden; right: -10px; }
+.window_b { width: 100%; bottom: -10px; height: 10px; overflow: hidden; left: 0px; }
+.window_current .window_b { width: 100%; bottom: -10px; height: 10px; overflow: hidden; left: 0px; }
+.window_lb { width: 10px; bottom: -10px; height: 10px; overflow: hidden; left: -10px; }
+.window_current .window_lb { width: 10px; bottom: -10px; height: 10px; overflow: hidden; left: -10px; }
+.window_l { width: 10px; height: 100%; overflow: hidden; left: -10px; }
+.window_current .window_l { width: 10px; height: 100%; overflow: hidden; left: -10px; }
+.window_lt { width: 10px; height: 10px; overflow: hidden; top: -10px; left: -10px; }
+.window_current .window_lt { width: 10px; height: 10px; overflow: hidden; top: -10px; left: -10px; }
+.fullscreen_bg_iframe { z-index: -1; position: absolute; border-bottom-style: none; filter: alpha(opacity = 0); BORDER-RIGHT-STYLE: none; border-top-style: none; border-left-style: none; top: 0px; left: 0px; opacity: 0; }
+.titleText { color: #333333; font-weight: bold; }
+.window_current .titleText { color: black; }
+.window { background: url(../images/transparent.gif); }
+.window_title { height: 39px; }
+.window_bodyArea { top: 28px; }
+.window_controlArea { position: absolute; padding-bottom: 0px; padding-left: 0px; width: 100%; bottom: 0px; padding-right: 0px; display: none; height: 23px; padding-top: 3px; }
+A.window_button { text-align: center; line-height: 23px; width: 66px; display: none; float: right; height: 23px; color: #333; margin-left: 10px; cursor: pointer; }
+A.window_button { background: url(../images/dialog/sprite_main_png.png) no-repeat 0px -200px; }
+A.window_ok { background-position: 0px -200px; }
+A.window_cancel { background-position: 0px -200px; }
+.layoutSaver P { margin: 30px; }
+A.window_action_button { width: 25px; background: url(../images/dialog/sprite_main_png.png) no-repeat -122px -22px; height: 25px; }
+HTML.ie7_0 A.window_action_button { background-image: url(../images/dialog/sprite_main_gif.gif); }
+A.window_close { background-position: -122px -22px; }
+A.window_close:hover { background-position: -122px -52px; }
+.window_center { background: url(../images/dialog/window.png) left top; }
+HTML.ie7_0 .window_center { background: #c4c4c4; }
+.window_current .window_center { background: url(../images/dialog/window_cur.png) left top; }
+HTML.ie7_0 .window_current .window_center { background: #e8e8e8; }
+.window_t { background: url(../images/dialog/sprite_repeat_x_png.png) repeat-x 0px -80px; }
+HTML.ie7_0 .window_t { background-image: url(../images/dialog/sprite_repeat_x_gif.gif); }
+.window_current .window_t { background-position: 0px -100px; }
+.window_rt { background: url(../images/dialog/sprite_main_png.png) no-repeat -10px 0px; }
+HTML.ie7_0 .window_rt { background-image: url(../images/dialog/sprite_main_gif.gif); }
+.window_current .window_rt { background-position: -30px 0px; }
+.window_r { background: url(../images/dialog/sprite_repeat_y_png.png) repeat-y -10px 0px; }
+HTML.ie7_0 .window_r { background-image: url(../images/dialog/sprite_repeat_y_gif.gif); }
+.window_current .window_r { background-position: -30px 0px; }
+.window_rb { background: url(../images/dialog/sprite_main_png.png) no-repeat -10px -10px; }
+HTML.ie7_0 .window_rb { background-image: url(../images/dialog/sprite_main_gif.gif); }
+.window_current .window_rb { background-position: -30px -10px; }
+.window_b { background: url(../images/dialog/sprite_repeat_x_png.png) repeat-x 0px -90px; }
+HTML.ie7_0 .window_b { background-image: url(../images/dialog/sprite_repeat_x_gif.gif); }
+.window_current .window_b { background-position: 0px -110px; }
+.window_lb { background: url(../images/dialog/sprite_main_png.png) no-repeat 0px -10px; }
+HTML.ie7_0 .window_lb { background-image: url(../images/dialog/sprite_main_gif.gif); }
+.window_current .window_lb { background-position: -20px -10px; }
+.window_l { background: url(../images/dialog/sprite_repeat_y_png.png) repeat-y 0px 0px; }
+HTML.ie7_0 .window_l { background-image: url(../images/dialog/sprite_repeat_y_gif.gif); }
+.window_current .window_l { background-position: -20px 0px; }
+.window_lt { background: url(../images/dialog/sprite_main_png.png) no-repeat 0px 0px; }
+HTML.ie7_0 .window_lt { background-image: url(../images/dialog/sprite_main_gif.gif); }
+.window_current .window_lt { background-position: -20px 0px; }

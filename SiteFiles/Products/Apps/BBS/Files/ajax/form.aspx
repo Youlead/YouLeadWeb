@@ -1,0 +1,1 @@
+﻿<%@ Page Language="c#" Inherits="SiteServer.BBS.Pages.Ajax.Form" Trace="False" EnableViewStateMac="false" %>

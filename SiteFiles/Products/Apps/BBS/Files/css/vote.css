@@ -1,0 +1,20 @@
+label { padding: 0px; border-width: 0px; margin: 0px; outline-width: 0px; }
+fieldset { margin: 0px; padding: 0px; border-width: 0px; }
+.gray9 { color: #999; }
+.lf { float: left; }
+.lv_form input { border-bottom: #f2f2f2 1px solid; border-left: #d2d5ca 1px solid; padding-bottom: 1px; padding-left: 2px; padding-right: 2px; color: #333; border-top: #c4c7bd 1px solid; border-right: #efefef 1px solid; padding-top: 3px; }
+.mBlogLayer .mid_c { background: #fff; }
+.mBlogLayer .layerBox { border-bottom: #a0a0a0 1px solid; border-left: #a0a0a0 1px solid; border-top: #a0a0a0 1px solid; border-right: #a0a0a0 1px solid; }
+.lv_form { position: relative; padding-bottom: 18px; padding-left: 25px; padding-right: 25px; padding-top: 18px; margin-left:5px; margin-right:5px; border: #cdcdcd 1px solid; }
+.lv_form p { margin-bottom: 12px; }
+.lv_form label { text-align: right; line-height: 24px; width: 65px; float: left; }
+.lv_results { text-align: right; line-height: 24px; width: 65px; float: left; }
+.lv_input2 { border-style: none; vertical-align: middle; }
+.lv_inputsub { border-bottom: #c4c7bd 1px solid; border-left: #c4c7bd 1px solid; padding-bottom: 3px; line-height: 20px; background-color: #f8fbef; padding-left: 3px; width: 344px; padding-right: 3px; height: 20px; border-top: #c4c7bd 1px solid; border-right: #c4c7bd 1px solid; padding-top: 3px; }
+.lv_inputsub input { border-bottom-style: none; border-right-style: none; background-color: #f8fbef; width: 310px; border-top-style: none; margin-left: 4px; border-left-style: none; }
+.lv_form label.label12 { text-align: left; margin: 0px 5px; width: auto; float: none; vertical-align: middle; }
+.lv_mt { margin-left: 5px; }
+.lv_form select { border-bottom: #ddd 1px solid; border-left: #ddd 1px solid; margin-top: 0px; border-top: #ddd 1px solid; margin-right: 6px; border-right: #ddd 1px solid; }
+.lv_calendar { border-bottom: #ddd 1px solid; border-left: #ddd 1px solid; padding-bottom: 0px; line-height: 20px; padding-left: 2px; width: 135px; padding-right: 40px; background: url(../images/vote_calendar.png) no-repeat right center; height: 20px; border-top: #ddd 1px solid; cursor: pointer; margin-right: 10px; border-right: #ddd 1px solid; padding-top: 0px; }
+.lv_form .vote_addicon { vertical-align: 2px; margin-right: 6px; width:13px; height:13px; display: inline-block; background: url(../images/vote_add.png) no-repeat left center; vertical-align: middle; }
+.lv_ldpic { vertical-align: middle; margin-right: 4px; _margin-bottom: 2px; }

@@ -1,0 +1,92 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	margin:0px auto;
+	width:1003px;
+	font-size:12px;
+	font-family:"宋体";
+	background-color:#FFF;
+}
+.header {
+	padding-top:8px;
+	padding-bottom:8px;
+	background:url(../images/bj.jpg) repeat-x;
+}
+.header a {
+	text-decoration:none;
+	font-weight:bold;
+	font-size:14px;
+}
+.header a:hover {
+	text-decoration:underline;
+}
+.content {
+	margin:10px 0px 0px 0px;
+	/*background:url(../images/bjc.jpg) repeat;*/
+	border:1px solid gray;
+}
+.content-left {
+	width:200px;
+	float:left;
+}
+.left1 {
+	background:url(../images/bj2.jpg) repeat-x;
+	height:20px;
+	padding:5px 0px 0px 5px;
+	font-weight:bold;
+}
+.left-top {
+	margin:10px 0px 0px 0px;
+	padding:5px 0px 0px 5px;
+	border:1px solid gray;
+	border-left:none;
+	height:25px;
+}
+.left-top a {
+	text-decoration:none;
+	color:#000;
+}
+.left-top a:hover {
+	text-decoration:underline;
+}
+.left2 a {
+	text-decoration:none;
+	color:#000;
+}
+.left2 a:hover {
+	text-decoration:underline;
+}
+.left-middle {
+	margin:0px;
+	padding:5px 0px 0px 5px;
+	border:1px solid gray;
+	border-left:none;
+	border-top:none;
+}
+.left-bottom {
+	margin:0px;
+	padding:5px 0px 0px 5px;
+	border-right:1px solid gray;
+	border-bottom:1px solid gray;
+}
+dt {
+	font-size:14px;
+}
+dd {
+	margin:10px 0px 5px 30px;
+}
+dd a {
+	text-decoration:none;
+	color:#000;
+}
+dd a:hover {
+	text-decoration:underline;
+}
+.clear {
+	clear:both;
+}
+.footer {
+	text-align:center;
+	height:40px;
+	padding:25px 0px 0px;
+}

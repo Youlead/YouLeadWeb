@@ -1,0 +1,110 @@
+<script type="text/javascript"> 
+function threadManager(){
+    this.checknum = function (all) {
+        var a = b = 0;
+        var selected = '';
+        var check = document.getElementsByName('threadIDArray');
+        for (var i = 0; i < check.length; i++) {
+            if (!all && check[i].checked) {
+
+                selected += '&threadIDArray[' + a + ']=' + check[i].value;
+                a++;
+            } else if (all == 1) {
+               
+                if (check[i].disabled == true) {
+                   
+                    check[i].checked = false;
+                }
+                else {
+                    check[i].checked = true;
+                }
+                a++;
+            } else if (all == 2) {
+                check[i].checked = false;
+                b++;
+            } else {
+                b++;
+            }
+        }
+        return new Array(a, b, selected);
+    }
+	this.checkinfo = '';
+	this.setCounter = function(num){
+		var tags = document.getElementsByTagName('strong');
+		for(var i=0;i<tags.length;i++){
+			if(tags[i].id == 'select_count')tags[i].innerHTML = num;
+		}
+	}
+	this.show = function(popDiv,obj){
+		this.checkinfo = this.checknum(0);
+		if(this.checkinfo[0] > 0){
+			this.setCounter(this.checkinfo[0]);
+			read.open(popDiv,obj,2);
+		}else{
+			read.close();
+		}
+		this.setSelectAll();
+	}
+	this.setSelectAll = function(){
+		var total = this.checkinfo[1] + this.checkinfo[0];
+		if (total > 0) {
+			getObj('pw_sel_all').checked = false;
+			try{getObj('ajaxall').checked = false;}catch(e){}
+			if(this.checkinfo[0] == total){
+				getObj('pw_sel_all').checked = true;
+				try{getObj('ajaxall').checked = true;}catch(e){}
+			}
+		}
+	}
+	this.action = function (atag,id){
+		read.obj = atag;
+		var info = this.checknum();
+		var data = info[2];
+		sendmsg(atag.href,data,id);
+		return false;
+	}
+	this.checkall = function (obj) {
+	  
+	    var allType = 1; //1全选，2取消全选
+	    if (!obj.checked) allType = 2;
+	    this.checkinfo = this.checknum(allType);
+	    this.setSelectAll();
+	    this.setCounter(this.checkinfo[0]);
+	}
+}
+var threadManager = new threadManager;
+</script>
+<div id="threadManagerPop" style="display:none" class="popout">
+  <table cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+      <tr>
+        <td class="bgcorner1"></td>
+        <td class="pobg1"></td>
+        <td class="bgcorner2"></td>
+      </tr>
+      <tr>
+        <td class="pobg4"></td>
+        <td><div class="popoutContent">
+            <div style="width:320px;">
+              <div class="popTop" style="cursor:move;" onmousedown = "read.move(event);"> <a href="javascript:void(0)" class="adel" onclick="closep()">关闭</a> <span class="mr20">选中<strong class="xi1" id="select_count">1</strong>篇</span> </div>
+              <div class="popContent">
+                <p> <strong><a onclick="if (!alertCheckBoxCollection(document.getElementsByName('threadIDArray'), '请选择主题进行操作')){showDialog('/bbs_test/dialog/delete.aspx?publishmentSystemID=866&forumID=0&action=DeleteThread' + '&threadIDArray=' + getCheckBoxCollectionValue(document.getElementsByName('threadIDArray')),260, 300, '删除主题', '');}return false;" class="xg3" href="javascript:;">删除</a></strong> <span class="pipe">|</span><strong><a onclick="if (!alertCheckBoxCollection(document.getElementsByName('threadIDArray'), '请选择主题进行操作')){showDialog('/bbs_test/dialog/translate.aspx?publishmentSystemID=866&forumID=0' + '&threadIDArray=' + getCheckBoxCollectionValue(document.getElementsByName('threadIDArray')),300, 360, '移动主题', '');}return false;" class="xg3" href="javascript:;">移动</a></strong> <span class="pipe">|</span><strong><a onclick="failureMessage('该板块没有设置主题分类');" class="xg3" href="javascript:;">分类</a></strong> </p>
+                <p> <a onclick="if (!alertCheckBoxCollection(document.getElementsByName('threadIDArray'), '请选择主题进行操作')){showDialog('/bbs_test/dialog/highlight.aspx?action=top&publishmentSystemID=866&forumID=0' + '&threadIDArray=' + getCheckBoxCollectionValue(document.getElementsByName('threadIDArray')),460, 400, '主题管理', '');}return false;" class="xi1" href="javascript:;">置顶</a> <span class="pipe">|</span> <a onclick="if (!alertCheckBoxCollection(document.getElementsByName('threadIDArray'), '请选择主题进行操作')){showDialog('/bbs_test/dialog/highlight.aspx?action=digest&publishmentSystemID=866&forumID=0' + '&threadIDArray=' + getCheckBoxCollectionValue(document.getElementsByName('threadIDArray')),460, 400, '主题管理', '');}return false;" class="xi1" href="javascript:;">精华</a> <span class="pipe">|</span> <a onclick="if (!alertCheckBoxCollection(document.getElementsByName('threadIDArray'), '请选择主题进行操作')){showDialog('/bbs_test/dialog/highlight.aspx?action=highlight&publishmentSystemID=866&forumID=0' + '&threadIDArray=' + getCheckBoxCollectionValue(document.getElementsByName('threadIDArray')),460, 400, '主题管理', '');}return false;" class="xi1" href="javascript:;">高亮</a> <span class="pipe">|</span> <a onclick="if (!alertCheckBoxCollection(document.getElementsByName('threadIDArray'), '请选择主题进行操作')){showDialog('/bbs_test/dialog/upDown.aspx?publishmentSystemID=866&forumID=0' + '&threadIDArray=' + getCheckBoxCollectionValue(document.getElementsByName('threadIDArray')),300, 360, '提升下沉', '');}return false;" class="xg3" href="javascript:;">升降</a> <span class="pipe">|</span> <a onclick="if (!alertCheckBoxCollection(document.getElementsByName('threadIDArray'), '请选择主题进行操作')){showDialog('/bbs_test/dialog/lock.aspx?publishmentSystemID=866&forumID=0' + '&threadIDArray=' + getCheckBoxCollectionValue(document.getElementsByName('threadIDArray')),300, 360, '锁定', '');}return false;" class="xg3" href="javascript:;">锁定</a> <span class="pipe">|</span> <a onclick="if (!alertCheckBoxCollection(document.getElementsByName('threadIDArray'), '请选择主题进行操作')){showDialog('/bbs_test/dialog/ban.aspx?publishmentSystemID=866&forumID=0&action=BanThreads' + '&threadIDArray=' + getCheckBoxCollectionValue(document.getElementsByName('threadIDArray')),300, 360, '屏蔽帖子', '');}return false;" class="xg3" href="javascript:;">屏蔽</a> </p>
+              </div>
+              <div class="popBottom">
+                <label>
+                  <input name="ajaxall" id="ajaxall" type="checkbox" value=""  onclick="threadManager.checkall(this);"/>
+                  全选</label>
+              </div>
+            </div>
+          </div></td>
+        <td class="pobg2"></td>
+      </tr>
+      <tr>
+        <td class="bgcorner4"></td>
+        <td class="pobg3"></td>
+        <td class="bgcorner3"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

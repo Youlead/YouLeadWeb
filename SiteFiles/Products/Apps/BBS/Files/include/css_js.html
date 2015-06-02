@@ -1,0 +1,18 @@
+<link href="/bbs_test/css/dialog.css" rel="stylesheet" type="text/css">
+<link href="/bbs_test/css/popout.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/bbs_test/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="/bbs_test/js/jquery.form.js"></script>
+<script type="text/javascript" src="/bbs_test/js/jquery.bgiframe.min.js"></script>
+<script type="text/javascript" src="/bbs_test/js/jquery.loading.js"></script>
+<script type="text/javascript">
+var bbsUrl = '/bbs_test';var loading;var publishmentSystemID = 866;</script>
+<script type="text/javascript" src="/bbs_test/js/bbs.js"></script>
+<script type="text/javascript" src="/bbs_test/js/ready.js"></script>
+<script runat="server">
+protected override void OnInit(EventArgs e)
+{
+    base.PublishmentSystemID = 866;
+    base.OnInit(e);
+}
+</script>
+<%if (base.IsFullScreen){%><link href="/bbs_test/css/fullscreen.css" rel="stylesheet" type="text/css"><%}%>
